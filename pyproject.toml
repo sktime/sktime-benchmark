@@ -1,0 +1,24 @@
+[project]
+name = "sktime-benchmarking"
+version = "0.1.0"
+requires-python = ">=3.11"
+
+dependencies = [
+    "torch",
+    "transformers",
+    "accelerate",
+    "gluonts",
+    "einops",
+    "huggingface-hub",
+    "hf-xet",
+    "hydra-core",
+    "lightning",
+    "pytest",
+    "statsmodels",
+    "pmdarima",
+    "sktime",
+    "joblib",
+]
+
+[tool.uv.sources]
+sktime = { git = "https://github.com/sktime/sktime.git", branch = "main" }
