@@ -1,0 +1,6 @@
+{'Naive_1': NaiveForecaster(), 'SES': ExponentialSmoothing(), 'Holt': ExponentialSmoothing(trend='add'), 'Damped': ExponentialSmoothing(damped_trend=True, trend='add'), 'Theta': ThetaForecaster(), 'AutoARIMA': AutoARIMA(), 'AutoETS': AutoETS(), 'Comb': EnsembleForecaster(forecasters=[('ses', ExponentialSmoothing()),
+                                ('holt', ExponentialSmoothing(trend='add')),
+                                ('damped',
+                                 ExponentialSmoothing(damped_trend=True,
+                                                      trend='add'))]), 'Naive_S': NaiveForecaster()}
+{'[dataset=m4_yearly_dataset]_[cv_splitter=ExpandingWindowSplitter]': TaskObject(data=ForecastingData(name='m4_yearly_dataset'), cv_splitter=ExpandingWindowSplitter(fh=6, initial_window=12, step_length=2), scorers=[OverallWeightedAverage(), MeanAbsolutePercentageError(symmetric=True)], strategy='refit', cv_global=None, error_score='raise', cv_global_temporal=None)}

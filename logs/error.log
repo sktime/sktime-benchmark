@@ -1,0 +1,22 @@
+Resolved 98 packages in 860ms
+Resolved 98 packages in 0.82ms
+Checked 96 packages in 1ms
+/home/jigyasu/Code/sktime_benchmarking/.venv/lib/python3.11/site-packages/gluonts/json.py:102: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+/home/jigyasu/Code/sktime_benchmarking/.venv/lib/python3.11/site-packages/sktime/datasets/forecasting/monash/_forecasting_data.py:123: UserWarning: Due to errors in timestamps of the original dataset, RangeIndex is used to construct the timepoints.
+  warnings.warn(
+/home/jigyasu/Code/sktime_benchmarking/.venv/lib/python3.11/site-packages/sktime/datasets/forecasting/monash/_forecasting_data.py:123: UserWarning: Due to errors in timestamps of the original dataset, RangeIndex is used to construct the timepoints.
+  warnings.warn(
+/home/jigyasu/Code/sktime_benchmarking/.venv/lib/python3.11/site-packages/statsmodels/tsa/stattools.py:702: RuntimeWarning: invalid value encountered in divide
+  acf = avf[: nlags + 1] / avf[0]
+/home/jigyasu/Code/sktime_benchmarking/.venv/lib/python3.11/site-packages/statsmodels/tsa/stattools.py:702: RuntimeWarning: invalid value encountered in divide
+  acf = avf[: nlags + 1] / avf[0]
+
+... > 200k lines of warnings/logs removed manually to keep file size small on github
+
+/home/jigyasu/Code/sktime_benchmarking/.venv/lib/python3.11/site-packages/numpy/_core/_methods.py:227: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/home/jigyasu/Code/sktime_benchmarking/.venv/lib/python3.11/site-packages/numpy/_core/_methods.py:219: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Benchmark completed with 1 failed task-estimator pair(s):
+  - task=[dataset=m4_yearly_dataset]_[cv_splitter=ExpandingWindowSplitter], model=AutoARIMA: ValueError: Input contains NaN.

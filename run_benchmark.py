@@ -1,27 +1,16 @@
-"""sktime Forecasting Leaderboard run on the cluster."""
+"""M4 competition yearly catalogue run on the slurm cluster."""
 
 from sktime.benchmarking.forecasting import ForecastingBenchmark
-from catalogue.forecasting_catalogue import ForecastingCatalogue
+from sktime.catalogues import M4CompetitionCatalogueYearly
+from sktime.split import ExpandingWindowSplitter
 
+catalogue = M4CompetitionCatalogueYearly()
 benchmark = ForecastingBenchmark(backend="loky")
 
-catalogue = ForecastingCatalogue()
+benchmark.add(catalogue)
+benchmark.add(ExpandingWindowSplitter(initial_window=12, step_length=2, fh=6))
 
-forecasters = catalogue.get(object_type="forecaster", as_object=True)
-dataset_loaders = catalogue.get(object_type="dataset", as_object=True)
-scorers = catalogue.get(object_type="metric", as_object=True)
-cv_splitter = catalogue.get(object_type="cv_splitter", as_object=True)  
+print(benchmark.estimators.entities)
+print(benchmark.tasks.entities)
 
-for forecaster in forecasters:
-    benchmark.add_estimator(forecaster)
-
-for dataset_loader in dataset_loaders:
-    for cv in cv_splitter:
-        benchmark.add_task(
-            dataset_loader,
-            cv,
-            scorers,
-        )
-
-results = benchmark.run("./forecasting_results.csv")
-print(results)
+results = benchmark.run("./M4_competition_yearly_results.csv")

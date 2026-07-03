@@ -5,7 +5,7 @@
 #SBATCH --error=logs/error.log
 
 #SBATCH --partition=main
-#SBATCH --mem=4G
+#SBATCH --mem=8G
 
 set -e
 
