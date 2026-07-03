@@ -12,18 +12,6 @@ This repository demonstrates how to run time series benchmarking experiments usi
 
 The first few section talks about the benchmarking module itself and the later sections talk about the Slurm configurations.
 
-## Repository structure
-
-```
-.
-├── benchmark.slurm          # Slurm job script
-├── run_benchmark.py         # Benchmark definition
-├── logs/
-│   ├── output.log
-│   └── error.log
-└── README.md
-```
-
 ## Defining a benchmark
 
 A benchmark in sktime consists of the following components:
